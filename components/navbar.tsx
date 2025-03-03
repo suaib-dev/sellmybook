@@ -1,66 +1,3 @@
-// "use client";
-
-// import { useState, useEffect } from "react";
-// import Link from "next/link";
-// import { Book } from "lucide-react";
-// import { ThemeToggle } from "@/components/theme-toggle";
-// import { Button } from "@/components/ui/button";
-
-// export function Navbar() {
-//   const [isScrolled, setIsScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 10);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <header
-//       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-//         isScrolled
-//           ? "bg-background/80 backdrop-blur-md shadow-sm"
-//           : "bg-transparent"
-//       }`}
-//     >
-//       <div className="container flex h-16 items-center justify-between">
-//         <Link href="/" className="flex items-center space-x-2">
-//           <Book className="h-6 w-6 text-primary" />
-//           <span className="font-bold text-xl">SellMyBook</span>
-//         </Link>
-//         <nav className="hidden md:flex items-center space-x-6">
-//           <Link
-//             href="#features"
-//             className="text-sm font-medium transition-colors hover:text-primary"
-//           >
-//             Features
-//           </Link>
-//           <Link
-//             href="#how-it-works"
-//             className="text-sm font-medium transition-colors hover:text-primary"
-//           >
-//             How It Works
-//           </Link>
-//           <Link
-//             href="#download"
-//             className="text-sm font-medium transition-colors hover:text-primary"
-//           >
-//             Download
-//           </Link>
-//         </nav>
-//         <div className="flex items-center space-x-2">
-//           <ThemeToggle />
-//           <Button asChild size="sm" className="hidden md:flex">
-//             <Link href="#download">Get the App</Link>
-//           </Button>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
 
 "use client";
 
@@ -69,6 +6,8 @@ import Link from "next/link";
 import { Book, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -90,14 +29,15 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+        ? "bg-background/80 backdrop-blur-md shadow-sm"
+        : "bg-transparent"
         }`}
     >
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <Book className="h-6 w-6 text-primary" />
+          <Image src="/sellmybook/logo.png" alt="SellMyBook Logo" width={60} height={60} />
+
           <span className="font-bold text-xl">SellMyBook</span>
         </Link>
 
